@@ -178,4 +178,14 @@ describe("Test /api backend routing", () => {
     );
     expect(storeRequestMock).not.toHaveBeenCalled();
   });
+
+  it("should not expose PAT status information", async () => {
+    const req = { headers: {}, url: "/api/status/pat-info" };
+    const res = createResponse();
+
+    await router(req, res);
+
+    expect(res.statusCode).toBe(404);
+    expect(res.end).toHaveBeenCalledExactlyOnceWith("Not Found");
+  });
 });

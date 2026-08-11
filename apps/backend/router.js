@@ -10,7 +10,6 @@ import { default as authenticate } from "./api-renamed/authenticate.js";
 import { default as deleteUser } from "./api-renamed/delete-user.js";
 import { default as downgrade } from "./api-renamed/downgrade.js";
 import { default as repeatRecent } from "./api-renamed/repeat-recent.js";
-import { default as patInfo } from "./api-renamed/status/pat-info.js";
 import { default as statusUp } from "./api-renamed/status/up.js";
 import { default as userAccess } from "./api-renamed/user-access.js";
 import { default as wakatimeProxy } from "./api-renamed/wakatime-proxy.js";
@@ -198,9 +197,6 @@ export default async (req, res) => {
       break;
     case "/api/repeat-recent":
       await repeatRecent(req, res);
-      break;
-    case "/api/status/pat-info":
-      await patInfo(req, res);
       break;
     case "/api/status/up":
       await statusUp(req, res);
